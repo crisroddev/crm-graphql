@@ -1,14 +1,5 @@
-class Cliente {
-    constructor(id, {nombre, apellido, empresa, email}) {
-        this.id = id,
-        this.nombre = nombre,
-        this.apellido = apellido,
-        this.empresa = empresa,
-        this.email = email
-    }
-}
-
-const clientesDB = {};
+import mongoose from 'mongoose';
+import {Clientes} from './db';
 
 export const resolvers = {
     Query: {
@@ -18,10 +9,21 @@ export const resolvers = {
     },
 
     Mutation: {
-        crearCliente: ({ input }) => {
-            const id = require('crypto').randomBytes(10).toString('hex');
-            clientesDB[id] = input;
-            return new Cliente(id, input)
+        crearCliente: (root, { input }) => {
+            const nuevoCliente = new Clientes({
+                nombre : input.nombre,
+                apellido : input.apellido,
+                empresa : input.empresa,
+                email : input.email
+            });
+            nuevoCliente.id = nuevoCliente._id;
+
+            return new Promise((resolve, object)=> {
+                nuevoCliente.save((error) => {
+                    if(error) rejects(error)
+                    else resolve(nuevoCliente)
+                })
+            });
         }
     }
 };
