@@ -2,6 +2,9 @@
   "name": "crm-graphql",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js --exec babel-node -e js"
+  },
   "repository": "https://github.com/crodriguez85/crm-graphql.git",
   "author": "CrisRod <crodriguez85@gmail.com>",
   "license": "MIT",
