@@ -7,3 +7,6 @@ yarn init
 ```
 yarn add nodemon express
 ```
+```
+yarn add babel-cli babel-preset-env babel-preset-stage-0
+```
