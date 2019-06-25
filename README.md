@@ -46,5 +46,9 @@ type Cliente {
     }
 }
 ```
+## Using schema.graphql
+```
+yarn add graphql-tools graphql-import
+```
 
 
