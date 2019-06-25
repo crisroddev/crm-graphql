@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/crodriguez85/crm-graphql.git",
   "author": "CrisRod <crodriguez85@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
 }
