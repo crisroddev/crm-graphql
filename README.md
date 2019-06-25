@@ -13,3 +13,6 @@ yarn add babel-cli babel-preset-env babel-preset-stage-0
 ```
 babel file .babelrc
 ```
+```
+yarn add express-graphql graphql
+```
