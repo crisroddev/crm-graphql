@@ -50,5 +50,8 @@ type Cliente {
 ```
 yarn add graphql-tools graphql-import
 ```
-
+## MongoDB
+```
+yarn add mongoose
+```
 
