@@ -1,13 +1,22 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import schema from './schema';
+import { getMaxListeners } from 'cluster';
 
 const app = express();
 
 
 
 
-const root = { hola: () => "Hola Mundo"};
+const root = { cliente: () => {
+    return {
+        "id": 1,
+        "nombre": "Cristian",
+        "apellido": "Rodriguez",
+        "empresa": "Mobilize",
+        "email": "cr@gmail.com"
+    }
+}};
 
 app.use('/graphql', graphqlHTTP({
     schema,

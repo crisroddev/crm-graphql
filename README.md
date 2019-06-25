@@ -16,3 +16,17 @@ babel file .babelrc
 ```
 yarn add express-graphql graphql
 ```
+## First Schema
+```
+type Cliente {
+        id: ID
+        nombre: String
+        apellido: String
+        empresa: String
+        email: String
+    }
+
+    type Query {
+        cliente: Cliente
+    }
+```
