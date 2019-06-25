@@ -14,7 +14,10 @@ const root = { cliente: () => {
         "nombre": "Cristian",
         "apellido": "Rodriguez",
         "empresa": "Mobilize",
-        "email": "cr@gmail.com"
+        "emails": [
+            {email: "cr@gmail.com"},
+            {email: "cr@gmail.com"}
+        ]
     }
 }};
 
