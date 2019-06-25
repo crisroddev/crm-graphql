@@ -30,3 +30,20 @@ type Cliente {
         cliente: Cliente
     }
 ```
+
+## Type Mutation
+```
+    input ClienteInput {
+        id: ID
+        nombre: String
+        apellido: String
+        empresa: String
+        email: String
+    }
+
+    type Mutation {
+        crearCliente(input: ClienteInput): Cliente
+    }
+}
+```
+
