@@ -8,7 +8,7 @@ const Contactos = () => (
     {({ loading, error, data, startPolling, stopPolling}) => {
         if(loading) return "Cargando"
         if(error) return `Error: ${error.message}`
-
+å
         return (
             <Fragment>
                 <h2 className="text-center"> Listado Clientes</h2>
