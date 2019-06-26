@@ -22,7 +22,18 @@ class NewClient extends Component {
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label>Nombre</label>
-                                <input type="text" className="form-control" placeholder="Nombre"/>
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    placeholder="Nombre"
+                                    onChange={ e => {
+                                        this.setState({
+                                            cliente: {
+                                                nombre: e.target.value
+                                            }
+                                        })
+                                    }}
+                                />
                             </div>
                             <div className="form-group col-md-6">
                                 <label>Apellido</label>
