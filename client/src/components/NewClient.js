@@ -1,7 +1,18 @@
 import React, { Component, Fragment } from 'react';
+import { Mutation } from 'react-apollo';
+import { CREAR_CLIENTE } from '../mutations';
 
 class NewClient extends Component {
-    state = {}
+    state = {
+        cliente: {
+            nombre: '',
+            apellido: '',
+            empresa: '',
+            edad: '',
+            email: '',
+            tipo: ''
+        }
+    }
     render() {
         return (
             <Fragment>
