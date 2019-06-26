@@ -54,4 +54,7 @@ type Cliente {
         #Nombre del Resolver, input con datos y valor que retorna
         """ Te permite crear nuevos clientes """
         crearCliente(input: ClienteInput): Cliente
+
+        """ Te permite actualizar los clientes"""
+        actualizarCliente(input: ClienteInput): Cliente
     }
