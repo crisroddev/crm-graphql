@@ -6,8 +6,8 @@ export const resolvers = {
         getCliente : ({ id }) => {
             return Cliente.find({_id: id});
         },
-        getClientes: () => {
-            return Clientes.find({})
+        getClientes: (root, { limite }) => {
+            return Clientes.find({}).limit(limite)
         },
     },
 
