@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 // Components
 import Header from './components/Header';
 import Client from './components/Client';
+import EditClient from './components/EditClient';
+import NewClient from './components/NewClient';
 
 const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql',
@@ -23,7 +25,10 @@ function App() {
           <Header/>
           <div className="container">
             <Switch>
-              <Route exact path='/' component={Client}/>>
+              <Route exact path='/' component={Client}/>
+              <Route exact path='/cliente/nuevo' component={NewClient}/>
+              <Route exact path='/cliente/editar/:id' component={EditClient}/>
+
             </Switch>
           </div>
         </Fragment>

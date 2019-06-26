@@ -110,6 +110,8 @@ function App() {
 ```
 Header.js
 Client.js
+NewClient.js
+EditClient.js
 ```
 Add React Router
 yarn add react-router-dom
