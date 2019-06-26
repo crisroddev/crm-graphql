@@ -4,8 +4,11 @@ import mongoose from 'mongoose';
 export const resolvers = {
     Query: {
         getCliente : ({ id }) => {
-            return new Cliente(id, clientesDB[id]);
-        }
+            return Cliente.find({_id: id});
+        },
+        getClientes: () => {
+            return Clientes.find({})
+        },
     },
 
     Mutation: {
