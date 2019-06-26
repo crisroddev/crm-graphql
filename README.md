@@ -119,4 +119,7 @@ yarn add react-router-dom
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 ```
 ## New Clients
+```
+Form add playground Mutation from folder mutations
+```
 
