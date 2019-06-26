@@ -9,6 +9,8 @@
   "author": "CrisRod <crodriguez85@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
     "apollo-server-express": "^2.6.7",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",

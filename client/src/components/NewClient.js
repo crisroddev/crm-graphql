@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Mutation } from 'react-apollo';
-import { NUEVO_CLIENTE } from '../mutations';
-import { createReadStream } from 'fs';
+import { NUEVO_CLIENTE } from '../mutations/index';
 
 class NewClient extends Component {
     state = {
@@ -27,14 +26,15 @@ class NewClient extends Component {
                                 onSubmit={ e => {
                                     e.preventDefault();
 
-                                    const { nombre, apellido, empresa, edad, email, tipo } = this.state.cliente;
+                                    const { tipo, edad } = this.state.cliente;
+
                                     const input = {
-                                        nombre,
-                                        apellido,
-                                        empresa,
+                                        nombre: this.state.nombre,
+                                        apellido: this.state.apellido,
+                                        empresa: this.state.empresa,
                                         edad: Number(edad),
-                                        email,
-                                        tipo
+                                        email: this.state.email,
+                                        tipo: tipo
                                     };
                                     crearCliente({
                                         variables: {input}
