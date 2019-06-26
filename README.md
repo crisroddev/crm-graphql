@@ -106,4 +106,7 @@ function App() {
 ```
 
 ## CRM APP
-
+### Componentes
+```
+Header.js
+```
