@@ -15,9 +15,14 @@ class NewClient extends Component {
         error: false
     }
     render() {
+        const { error } = this.state;
+        let respuesta = (error) ? <p className="alert alert-danger p-3 text-center">Todos los campos son obligatorios</p> : '';
         return (
             <Fragment>
                 <h1 className="text-center">Nuevo Cliente</h1>
+
+                    {respuesta}
+
                 <div className="row justify-content-center">
                     <Mutation mutation={NUEVO_CLIENTE}>
 
@@ -28,6 +33,19 @@ class NewClient extends Component {
                                     e.preventDefault();
 
                                     const { tipo, edad, nombre, apellido, empresa, email } = this.state.cliente;
+
+                                    if(nombre === '' || apellido === '' || empresa === '' || edad === '' || tipo === '') {
+                                        this.setState({
+                                            error: true
+                                        });
+                                        
+                                        return;
+                                    }
+
+                                    this.setState({
+                                        error: false
+                                    })
+
                                     const input = {
                                         nombre,
                                         apellido,
