@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Components
 import Header from './components/Header';
@@ -17,11 +18,16 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Header/>
-      <div className="container">
-        <Client/>
-
-      </div>
+      <Router>
+        <Fragment>
+          <Header/>
+          <div className="container">
+            <Switch>
+              <Route exact path='/' component={Client}/>>
+            </Switch>
+          </div>
+        </Fragment>
+      </Router>
     </ApolloProvider>
   );
 }
