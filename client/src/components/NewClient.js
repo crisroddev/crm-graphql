@@ -12,11 +12,14 @@ class NewClient extends Component {
             email: '',
             tipo: ''
         },
-        error: false
+        error: false,
+        emails: []
     }
 
     nuevoCampo = () => {
-        console.log('Hiciste Click')
+        this.setState({
+            emails: this.state.emails.concat([{email: ''}])
+        })
     }
 
     render() {
