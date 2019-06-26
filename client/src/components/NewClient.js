@@ -19,7 +19,24 @@ class NewClient extends Component {
             <Fragment>
                 <h1 className="text-center">Nuevo Cliente</h1>
                 <div className="row justify-content-center">
-                    <form className="col-md-8 m-3" >
+                    <form 
+                        className="col-md-8 m-3" 
+                        onSubmit={ e => {
+                            e.preventDefault();
+
+                            const { nombre, apellido, empresa, edad, email, tipo } = this.state.cliente;
+                            const input = {
+                                nombre,
+                                apellido,
+                                empresa,
+                                edad: Number(edad),
+                                email,
+                                tipo
+                            }
+                            console.log(input)
+                        }}
+
+                    >
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label>Nombre</label>
