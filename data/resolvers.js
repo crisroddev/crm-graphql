@@ -3,8 +3,13 @@ import mongoose from 'mongoose';
 
 export const resolvers = {
     Query: {
-        getCliente : ({ id }) => {
-            return Cliente.find({_id: id});
+        getCliente : (root, { id }) => {
+            return new Promise((resolve, object) => {
+                Clientes.findById(id, (error, cliente) => {
+                    if(error) rejects(error)
+                    else resolve(cliente)
+                });
+            });
         },
         getClientes: (root, { limite }) => {
             return Clientes.find({}).limit(limite)
