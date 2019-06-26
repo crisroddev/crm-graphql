@@ -112,21 +112,13 @@ class NewClient extends Component {
                                             }}
                                         />
                                     </div>
-                                    <div className="form-group col-md-6">
-                                        <label>Email</label>
-                                        <input 
-                                            type="email" 
-                                            className="form-control" 
-                                            placeholder="Email" 
-                                            onChange={ e => {
-                                                this.setState({
-                                                    cliente: {
-                                                        ...this.state.cliente,
-                                                        email: e.target.value
-                                                    }
-                                                })
-                                            }}   
-                                        />
+                                    <div className="form-group d-flex justify-content-center col-md-12">
+                                            <button
+                                                type="button"
+                                                className="btn btn-warning">
+                                            + Agregar Email
+                                            </button>
+
                                     </div>
                                 </div>
                                 <div className="form-row">
