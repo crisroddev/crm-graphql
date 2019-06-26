@@ -35,6 +35,14 @@ export const resolvers = {
                     else resolve(cliente)
                 })
             })
+        },
+        eliminarCliente: (root, { id }) => {
+            return new Promise((resolve, object) => {
+                Clientes.findOneAndRemove({ _id: id }, (error) => {
+                    if(error) rejects(error)
+                    else resolve("Se elimino correctamente")
+                })
+            })
         }
     }
 };
