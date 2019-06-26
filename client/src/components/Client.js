@@ -7,7 +7,7 @@ const Contactos = () => (
     {({ loading, error, data}) => {
         if(loading) return "Cargando"
         if(error) return `Error: ${error.message}`
-        console.log(data.getClientes);
+        {/* console.log(data.getClientes); */}
 
         return (
             <Fragment>
@@ -18,6 +18,11 @@ const Contactos = () => (
                             <div className="row justify-content-between align-items-center">
                                 <div className="col-md-8 d-flex justify-content-between align-items-center">
                                     { clientes.nombre } { clientes.apellido }
+                                </div>
+                                <div className="col-md-4 d-flex justify-content-end">
+                                    <a className="btn btn-success d-block d-md-inline-block">
+                                        Editar Cliente
+                                    </a>
                                 </div>
                             </div>
                         </li>
