@@ -70,7 +70,18 @@ class NewClient extends Component {
                             </div>
                             <div className="form-group col-md-6">
                                 <label>Email</label>
-                                <input type="email" className="form-control" placeholder="Email" />
+                                <input 
+                                    type="email" 
+                                    className="form-control" 
+                                    placeholder="Email" 
+                                    onChange={ e => {
+                                        this.setState({
+                                            cliente: {
+                                                email: e.target.value
+                                            }
+                                        })
+                                    }}    
+                                />
                             </div>
                         </div>
                         <div className="form-row">

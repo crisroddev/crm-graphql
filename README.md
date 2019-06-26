@@ -121,5 +121,14 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 ## New Clients
 ```
 Form add playground Mutation from folder mutations
+Add onChanges for inputs
+onChange={ e => {
+                                        this.setState({
+                                            cliente: {
+                                                empresa: e.target.value
+                                            }
+                                        })
+                                    }}
+                                />
 ```
 
