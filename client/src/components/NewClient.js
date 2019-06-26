@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Mutation } from 'react-apollo';
 import { CREAR_CLIENTE } from '../mutations';
+import { timingSafeEqual } from 'crypto';
 
 class NewClient extends Component {
     state = {
@@ -37,7 +38,18 @@ class NewClient extends Component {
                             </div>
                             <div className="form-group col-md-6">
                                 <label>Apellido</label>
-                                <input type="text" className="form-control" placeholder="Apellido"/>
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    placeholder="Apellido"
+                                    onChange={ e => {
+                                        this.setState({
+                                            cliente: {
+                                                apellido: e.target.value
+                                            }
+                                        })
+                                    }}
+                                />
                             </div>
                         </div>
                         <div className="form-row">
