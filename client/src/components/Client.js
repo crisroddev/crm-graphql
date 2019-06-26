@@ -4,11 +4,10 @@ import { CLIENTES_QUERY } from '../queries';
 import { Link } from 'react-router-dom';
 
 const Contactos = () => (
-    <Query query={CLIENTES_QUERY}>
-    {({ loading, error, data}) => {
+    <Query query={CLIENTES_QUERY} pollInterval={500}>
+    {({ loading, error, data, startPolling, stopPolling}) => {
         if(loading) return "Cargando"
         if(error) return `Error: ${error.message}`
-        {/* console.log(data.getClientes); */}
 
         return (
             <Fragment>

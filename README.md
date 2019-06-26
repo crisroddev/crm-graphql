@@ -156,4 +156,9 @@ crearCliente function sends data to database
                                 }}
                             >
 ```
+```
+Deactivate Caching
+ <Query query={CLIENTES_QUERY} pollInterval={500}>
+    {({ loading, error, data, startPolling, stopPolling}) => {
+```
 
