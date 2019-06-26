@@ -113,7 +113,10 @@ Client.js
 NewClient.js
 EditClient.js
 ```
+```
 Add React Router
 yarn add react-router-dom
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 ```
+## New Clients
+
