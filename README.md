@@ -132,4 +132,28 @@ onChange={ e => {
                                     }}
                                 />
 ```
+```
+Mutation Wraps Form
+crearCliente function sends data to database
+   { crearCliente => (
+                            <form 
+                                className="col-md-8 m-3" 
+                                onSubmit={ e => {
+                                    e.preventDefault();
+
+                                    const { nombre, apellido, empresa, edad, email, tipo } = this.state.cliente;
+                                    const input = {
+                                        nombre,
+                                        apellido,
+                                        empresa,
+                                        edad: Number(edad),
+                                        email,
+                                        tipo
+                                    };
+                                    crearCliente({
+                                        variables: {input}
+                                    })
+                                }}
+                            >
+```
 
