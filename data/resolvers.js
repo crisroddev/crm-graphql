@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+
 import {Clientes} from './db';
 
 export const resolvers = {
@@ -27,5 +27,3 @@ export const resolvers = {
         }
     }
 };
-
-export default resolvers;
