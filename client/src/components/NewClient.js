@@ -14,6 +14,11 @@ class NewClient extends Component {
         },
         error: false
     }
+
+    nuevoCampo = () => {
+        console.log('Hiciste Click')
+    }
+
     render() {
         const { error } = this.state;
         let respuesta = (error) ? <p className="alert alert-danger p-3 text-center">Todos los campos son obligatorios</p> : '';
@@ -114,6 +119,7 @@ class NewClient extends Component {
                                     </div>
                                     <div className="form-group d-flex justify-content-center col-md-12">
                                             <button
+                                            onClick={this.nuevoCampo}
                                                 type="button"
                                                 className="btn btn-warning">
                                             + Agregar Email
