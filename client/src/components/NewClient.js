@@ -30,6 +30,7 @@ class NewClient extends Component {
                                     onChange={ e => {
                                         this.setState({
                                             cliente: {
+                                                ...this.state.cliente,
                                                 nombre: e.target.value
                                             }
                                         })
@@ -45,6 +46,7 @@ class NewClient extends Component {
                                     onChange={ e => {
                                         this.setState({
                                             cliente: {
+                                                ...this.state.cliente,
                                                 apellido: e.target.value
                                             }
                                         })
@@ -62,6 +64,7 @@ class NewClient extends Component {
                                     onChange={ e => {
                                         this.setState({
                                             cliente: {
+                                                ...this.state.cliente,
                                                 empresa: e.target.value
                                             }
                                         })
@@ -77,6 +80,7 @@ class NewClient extends Component {
                                     onChange={ e => {
                                         this.setState({
                                             cliente: {
+                                                ...this.state.cliente,
                                                 email: e.target.value
                                             }
                                         })
@@ -93,6 +97,7 @@ class NewClient extends Component {
                                     placeholder="Edad"
                                     onChange={ e => {
                                         this.setState({
+                                            ...this.state.cliente,
                                             cliente: {
                                                 edad: e.target.value
                                             }

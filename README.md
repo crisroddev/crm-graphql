@@ -125,6 +125,7 @@ Add onChanges for inputs
 onChange={ e => {
                                         this.setState({
                                             cliente: {
+                                                ...this.state.cliente,
                                                 empresa: e.target.value
                                             }
                                         })
