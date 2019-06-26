@@ -11,7 +11,8 @@ class NewClient extends Component {
             edad: '',
             email: '',
             tipo: ''
-        }
+        },
+        error: false
     }
     render() {
         return (
@@ -26,15 +27,14 @@ class NewClient extends Component {
                                 onSubmit={ e => {
                                     e.preventDefault();
 
-                                    const { tipo, edad } = this.state.cliente;
-
+                                    const { tipo, edad, nombre, apellido, empresa, email } = this.state.cliente;
                                     const input = {
-                                        nombre: this.state.nombre,
-                                        apellido: this.state.apellido,
-                                        empresa: this.state.empresa,
+                                        nombre,
+                                        apellido,
+                                        empresa,
                                         edad: Number(edad),
-                                        email: this.state.email,
-                                        tipo: tipo
+                                        email,
+                                        tipo
                                     };
                                     crearCliente({
                                         variables: {input}
@@ -50,7 +50,7 @@ class NewClient extends Component {
                                             placeholder="Nombre"
                                             onChange={ e => {
                                                 this.setState({
-                                                    cliente: {
+                                                    cliente:{
                                                         ...this.state.cliente,
                                                         nombre: e.target.value
                                                     }
@@ -105,7 +105,7 @@ class NewClient extends Component {
                                                         email: e.target.value
                                                     }
                                                 })
-                                            }}    
+                                            }}   
                                         />
                                     </div>
                                 </div>
@@ -113,13 +113,13 @@ class NewClient extends Component {
                                     <div className="form-group col-md-6">
                                         <label>Edad</label>
                                         <input 
-                                            type="number" 
+                                            type="text" 
                                             className="form-control" 
                                             placeholder="Edad"
                                             onChange={ e => {
                                                 this.setState({
-                                                    ...this.state.cliente,
                                                     cliente: {
+                                                        ...this.state.cliente,
                                                         edad: e.target.value
                                                     }
                                                 })
