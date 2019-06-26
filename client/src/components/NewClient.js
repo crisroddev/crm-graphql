@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Mutation } from 'react-apollo';
-import { CREAR_CLIENTE } from '../mutations';
-import { timingSafeEqual } from 'crypto';
+import { NUEVO_CLIENTE } from '../mutations';
 
 class NewClient extends Component {
     state = {
@@ -35,7 +34,6 @@ class NewClient extends Component {
                             }
                             console.log(input)
                         }}
-
                     >
                         <div className="form-row">
                             <div className="form-group col-md-6">
