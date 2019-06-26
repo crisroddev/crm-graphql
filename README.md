@@ -79,4 +79,5 @@ yarn add apollo-server-express
 ## Apollo Client
 ```
 npx create-react-app client
+yarn add apollo-boost react-apollo graphql graphql-tag
 ```
