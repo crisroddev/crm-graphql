@@ -7,7 +7,7 @@ const Contactos = () => (
     {({ loading, error, data}) => {
         if(loading) return "Cargando"
         if(error) return `Error: ${error.message}`
-        console.log({data});
+        console.log(data.getClientes);
 
         return (
             <h2 className="text-center"> Listado Clientes</h2>
