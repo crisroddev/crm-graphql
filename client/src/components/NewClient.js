@@ -107,10 +107,20 @@ class NewClient extends Component {
                             </div>
                             <div className="form-group col-md-6">
                                 <label>Tipo Cliente</label>  
-                                <select className="form-control">
-                                    <option value="">Elegir...</option>
-                                    <option value="PREMIUM">PREMIUM</option>
-                                    <option value="BASICO">BÁSICO</option>
+                                <select 
+                                    className="form-control"
+                                    onChange={ e => {
+                                        this.setState({
+                                            cliente: {
+                                                ...this.state.cliente,
+                                                tipo: e.target.value
+                                            }
+                                        })
+                                    }}
+                                >
+                                        <option value="">Elegir...</option>
+                                        <option value="PREMIUM">PREMIUM</option>
+                                        <option value="BASICO">BÁSICO</option>
                                 </select>
                             </div>
                         </div>
