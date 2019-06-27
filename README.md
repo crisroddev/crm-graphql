@@ -196,4 +196,10 @@ FormularioEditarCliente
  <FormularioEditar
     cliente={data.getCliente}
 />
+
+<input
+    defaultValue={edad}
+    type="text" 
+    className="form-control" 
+/>
 ```

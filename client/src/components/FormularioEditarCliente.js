@@ -31,6 +31,8 @@ class FormularioEditar extends Component {
 
     render() { 
 
+            const { nombre, apellido, empresa, edad, tipo} = this.state.cliente;
+
             const {emails} = this.state;
            
             return (
@@ -41,7 +43,8 @@ class FormularioEditar extends Component {
                                     <label>Nombre</label>
                                     <input
                                         type="text" 
-                                        className="form-control" 
+                                        className="form-control"
+                                        defaultValue={nombre}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -49,6 +52,7 @@ class FormularioEditar extends Component {
                                     <input 
                                         type="text" 
                                         className="form-control" 
+                                        defaultValue={apellido}
                                      />
                                 </div>
                             </div>
@@ -59,6 +63,7 @@ class FormularioEditar extends Component {
                                     <input
                                         type="text" 
                                         className="form-control" 
+                                        defaultValue={empresa}
                                     />
                                 </div>
 
@@ -97,6 +102,7 @@ class FormularioEditar extends Component {
                                 <div className="form-group col-md-6">
                                     <label>Edad</label>
                                     <input
+                                        defaultValue={edad}
                                         type="text" 
                                         className="form-control" 
                                     />
@@ -105,6 +111,7 @@ class FormularioEditar extends Component {
                                     <label>Tipo Cliente</label>  
                                     <select 
                                         className="form-control"
+                                        defaultValue={tipo}
                                     >
                                         <option value="">Elegir...</option>
                                         <option value="PREMIUM">PREMIUM</option>
