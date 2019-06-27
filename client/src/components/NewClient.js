@@ -22,6 +22,12 @@ class NewClient extends Component {
         })
     }
 
+    eliminarCampo = () => {
+        this.setState({
+
+        })
+    }
+
     render() {
         const { error } = this.state;
         let respuesta = (error) ? <p className="alert alert-danger p-3 text-center">Todos los campos son obligatorios</p> : '';
@@ -132,7 +138,7 @@ class NewClient extends Component {
                                                 />
                                                 <div className="input-group-append">
                                                     <button
-                                                        onClick={this.eliminarCampo}
+                                                        onClick={this.eliminarCampo(index)}
                                                         type="button"
                                                         className="btn btn-danger"
                                                     >&times; Eliminar</button>
