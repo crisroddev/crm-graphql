@@ -22,6 +22,7 @@ class EditarCliente extends Component {
                         return(
                             <FormularioEditar
                                 cliente={data.getCliente}
+                                id
                             />
                         )
                     }}
