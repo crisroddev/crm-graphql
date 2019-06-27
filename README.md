@@ -230,3 +230,14 @@ return(
 ```
 
 ## Delete Clients
+```
+Mutation:
+mutation eliminarCliente($id: ID!) {
+  eliminarCliente(id: $id)
+}
+
+Variables
+{
+  "id": "5d138972ad4fe1ab008858ba"
+}
+```
