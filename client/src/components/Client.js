@@ -31,7 +31,7 @@ const Contactos = () => (
                                             onClick={ () => {
                                                 if(window.confirm('Seguro Quieres Eliminar al Cliente')) {
                                                     eliminarCliente({
-                                                    variables: id
+                                                    variables: {id}
                                                 })
                                                 }
                                             }}>
