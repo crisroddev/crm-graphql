@@ -44,8 +44,19 @@ class FormularioEditar extends Component {
                    <form className="col-md-8 m-3"
                     onSubmit={ e => {
                         e.preventDefault();
-                        const { nombre, apellido, empresa, edad, tipo } = this.state;
+                        const { id, nombre, apellido, empresa, edad, tipo } = this.state.cliente;
                         const { emails } = this.state;
+
+                        const input = {
+                            id, 
+                            nombre, 
+                            apellido,
+                            empresa,
+                            edad,
+                            tipo,
+                            emails
+                        }
+
                         
 
                     }}
