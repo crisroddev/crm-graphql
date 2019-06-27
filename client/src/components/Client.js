@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Query } from 'react-apollo';
+import { Query, Mutation } from 'react-apollo';
 import { CLIENTES_QUERY } from '../queries';
 import { ELIMINAR_CLIENTE } from '../mutations';
 import { Link } from 'react-router-dom';
@@ -20,15 +20,18 @@ const Contactos = () => (
                                     { clientes.nombre } { clientes.apellido } - {clientes.empresa}
                                 </div>
                                 <div className="col-md-4 d-flex justify-content-end">
-                                    <button
-                                        className="btn btn-danger d-block d-md-inline-block mr-2"
-                                        type="button"
-                                        onClick={ () => {
-                                            console.log(clientes.id)
-                                        }}
-                                    >
-                                    &times; Eliminar
-                                    </button>
+                                <Mutation mutation={ELIMINAR_CLIENTE}>
+                                    {eliminarCliente => (
+                                        <button
+                                            className="btn btn-danger d-block d-md-inline-block mr-2"
+                                            type="button"
+                                            onClick={ () => {
+                                                console.log(clientes.id)
+                                            }}>
+                                        &times; Eliminar
+                                        </button>
+                                    )}
+                                </Mutation>
                                     <Link to={`/cliente/editar/${clientes.id}`} className="btn btn-success d-block d-md-inline-block">
                                         Editar Cliente
                                     </Link>
