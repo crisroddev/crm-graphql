@@ -41,7 +41,9 @@ class FormularioEditar extends Component {
             return (
                 <Mutation 
                     mutation={ACTUALIZAR_CLIENTE}
-                    onCompleted={ () =>this.props.history.push('/') }    
+                    onCompleted={ () =>this.props.refetch().then(() => {
+                        this.props.history.push('/')
+                    })}    
                 >
 
                 {actualizarCliente => (

@@ -216,3 +216,15 @@ const client = new ApolloClient({
   }
 });
 ```
+```
+Refetch every time we call it the query its made again
+ <Query query={CLIENTE_QUERY} variables={{id}} pollInterval={500} refetchQueries={ACTUALIZAR_CLIENTE}>
+  {({ loading, error, data, startPolling, stopPolling, refetch }) => {
+
+return(
+ <FormularioEditar
+ cliente={data.getCliente}
+ id
+ refetch={refetch}
+/>
+```

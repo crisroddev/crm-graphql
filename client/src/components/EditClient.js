@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { CLIENTE_QUERY } from '../queries';
 import { Query } from 'react-apollo'; 
 import FormularioEditar from './FormularioEditarCliente';
+import { ACTUALIZAR_CLIENTE } from '../mutations';
 
 class EditarCliente extends Component {
     state = {}
@@ -13,8 +14,8 @@ class EditarCliente extends Component {
                 <h1 className="text-center">Editar Cliente</h1>
 
                 <div className="row justify-content-center">
-                <Query query={CLIENTE_QUERY} variables={{id}} pollInterval={500}>
-                    {({ loading, error, data, startPolling, stopPolling }) => {
+                <Query query={CLIENTE_QUERY} variables={{id}} pollInterval={500} refetchQueries={ACTUALIZAR_CLIENTE}>
+                    {({ loading, error, data, startPolling, stopPolling, refetch }) => {
                         if(loading) return 'Cargando'
                         if(error) return `Error: ${error.message}`
                         console.log(data)
@@ -23,6 +24,7 @@ class EditarCliente extends Component {
                             <FormularioEditar
                                 cliente={data.getCliente}
                                 id
+                                refetch={refetch}
                             />
                         )
                     }}
