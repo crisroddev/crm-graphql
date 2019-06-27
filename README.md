@@ -161,4 +161,10 @@ Deactivate Caching
  <Query query={CLIENTES_QUERY} pollInterval={500}>
     {({ loading, error, data, startPolling, stopPolling}) => {
 ```
+## Edit Clients
+```
+Match --> Params --> We get the ID
+ const { id } = this.props.match.params
 
+console.log(id);
+```
