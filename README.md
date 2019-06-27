@@ -203,3 +203,16 @@ FormularioEditarCliente
     className="form-control" 
 />
 ```
+```
+Delete typeName Cache
+const client = new ApolloClient({
+  uri: 'http://localhost:8000/graphql',
+  cache: new InMemoryCache({
+    addTypename: false
+  }),
+  onError: ({ networkError, graphqlErrors}) => {
+    console.log('graphqlErrors', graphqlErrors);
+    console.log('networkError', networkError);
+  }
+});
+```
