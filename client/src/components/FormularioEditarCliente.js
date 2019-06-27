@@ -46,6 +46,7 @@ class FormularioEditar extends Component {
                         e.preventDefault();
                         const { nombre, apellido, empresa, edad, tipo } = this.state;
                         const { emails } = this.state;
+                        
 
                     }}
                    >
