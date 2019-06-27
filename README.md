@@ -185,3 +185,8 @@ Query Variables
   "id": "5d138972ad4fe1ab008858ba"
 }
 ```
+
+```
+Front
+<Query query={CLIENTE_QUERY} variables={{id}}>
+```
