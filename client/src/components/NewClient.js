@@ -123,12 +123,21 @@ class NewClient extends Component {
                                     {this.state.emails.map((input, index)=> (
                                         <div key={index} className="form-group col-md-12">
                                             <label>Correo: { index +1 }:</label>
-                                            <input
-                                                type="email"
-                                                placeholder="Email"
-                                                className="form-control"
-                                            />
 
+                                            <div className="input-group">
+                                                <input
+                                                    type="email"
+                                                    placeholder="Email"
+                                                    className="form-control"
+                                                />
+                                                <div className="input-group-append">
+                                                    <button
+                                                        onClick={this.eliminarCampo}
+                                                        type="button"
+                                                        className="btn btn-danger"
+                                                    >&times; Eliminar</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     ))}
                                     <div className="form-group d-flex justify-content-center col-md-12">
@@ -138,7 +147,6 @@ class NewClient extends Component {
                                                 className="btn btn-warning">
                                             + Agregar Email
                                             </button>
-
                                     </div>
                                 </div>
                                 <div className="form-row">
