@@ -52,13 +52,14 @@ class FormularioEditar extends Component {
                             nombre, 
                             apellido,
                             empresa,
-                            edad,
+                            edad: Number(edad),
                             tipo,
                             emails
                         }
 
-                        
-
+                        actualizarCliente({
+                            variables: { input }
+                        })
                     }}
                    >
                             <div className="form-row">
