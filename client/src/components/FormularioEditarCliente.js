@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Mutation } from 'react-apollo';
+import { ACTUALIZAR_CLIENTE } from '../mutations';
 
 class FormularioEditar extends Component {
 
@@ -36,7 +38,9 @@ class FormularioEditar extends Component {
             const {emails} = this.state;
            
             return (
-        
+                <Mutation mutation={ACTUALIZAR_CLIENTE}>
+
+                {actualizarCliente => (
                    <form className="col-md-8 m-3">
                             <div className="form-row">
                                 <div className="form-group col-md-6">
@@ -161,6 +165,8 @@ class FormularioEditar extends Component {
                             </div>
                             <button type="submit" className="btn btn-success float-right">Guardar Cambios</button>
                         </form>
+                )}
+                </Mutation>
             )      
     }
 }
