@@ -110,7 +110,7 @@ class NewClient extends Component {
                                     </div>
                                 </div>
                                 <div className="form-row">
-                                    <div className="form-group col-md-6">
+                                    <div className="form-group col-md-12">
                                         <label>Empresa</label>
                                         <input 
                                             type="text" 
@@ -132,6 +132,7 @@ class NewClient extends Component {
 
                                             <div className="input-group">
                                                 <input
+                                                    onChange={this.campoEmail}
                                                     type="email"
                                                     placeholder="Email"
                                                     className="form-control"
