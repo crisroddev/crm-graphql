@@ -41,7 +41,14 @@ class FormularioEditar extends Component {
                 <Mutation mutation={ACTUALIZAR_CLIENTE}>
 
                 {actualizarCliente => (
-                   <form className="col-md-8 m-3">
+                   <form className="col-md-8 m-3"
+                    onSubmit={ e => {
+                        e.preventDefault();
+                        const { nombre, apellido, empresa, edad, tipo } = this.state;
+                        const { emails } = this.state;
+
+                    }}
+                   >
                             <div className="form-row">
                                 <div className="form-group col-md-6">
                                     <label>Nombre</label>
