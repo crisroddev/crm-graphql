@@ -28,8 +28,9 @@ class NewClient extends Component {
         })
     }
 
-    campoEmail = () => {
-        console.log('Escribiendo email')
+    campoEmail = i => e => {
+        console.log(i);
+        console.log(e.target.value)
     }
 
     render() {
@@ -136,7 +137,7 @@ class NewClient extends Component {
 
                                             <div className="input-group">
                                                 <input
-                                                    onChange={this.campoEmail}
+                                                    onChange={this.campoEmail(index)}
                                                     type="email"
                                                     placeholder="Email"
                                                     className="form-control"
