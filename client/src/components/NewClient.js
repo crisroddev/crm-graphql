@@ -86,7 +86,7 @@ class NewClient extends Component {
                                         tipo
                                     };
 
-                                    console.log(input);
+                                    // console.log(input);
                                     crearCliente({
                                         variables: {input}
                                     })
