@@ -16,15 +16,15 @@ class NewClient extends Component {
         emails: []
     }
 
-    nuevoCampo = () => () => {
+    nuevoCampo = () => {
         this.setState({
             emails: this.state.emails.concat([{email: ''}])
         })
     }
 
-    eliminarCampo = () => {
+    eliminarCampo = i => () => {
         this.setState({
-
+            emails: this.state.emails.filter((email, index) => i !== index )
         })
     }
 
