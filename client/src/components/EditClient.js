@@ -20,7 +20,6 @@ class EditarCliente extends Component {
                         return(
                             <h4>{data.getCliente.nombre} {data.getCliente.apellido}</h4>
                         )
-
                     }}
 
                 </Query>
