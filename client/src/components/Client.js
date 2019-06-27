@@ -26,7 +26,9 @@ const Contactos = () => (
                                             className="btn btn-danger d-block d-md-inline-block mr-2"
                                             type="button"
                                             onClick={ () => {
-                                                console.log(clientes.id)
+                                                eliminarCliente({
+                                                    variables: clientes.id
+                                                })
                                             }}>
                                         &times; Eliminar
                                         </button>
