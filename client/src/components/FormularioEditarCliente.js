@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class FormularioEditar extends Component {
 
     state =  {
-        emails: []
+        cliente: this.props.cliente,
+        emails: this.props.cliente.emails
     }
 
     nuevoCampo = () => {
