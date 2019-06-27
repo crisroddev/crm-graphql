@@ -190,3 +190,10 @@ Query Variables
 Front
 <Query query={CLIENTE_QUERY} variables={{id}}>
 ```
+```
+Component
+FormularioEditarCliente
+ <FormularioEditar
+    cliente={data.getCliente}
+/>
+```

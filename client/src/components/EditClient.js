@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { CLIENTE_QUERY } from '../queries';
 import { Query } from 'react-apollo'; 
+import FormularioEditar from './FormularioEditarCliente';
 
 class EditarCliente extends Component {
     state = {}
@@ -10,7 +11,8 @@ class EditarCliente extends Component {
         return (
             <Fragment>
                 <h1 className="text-center">Editar Cliente</h1>
-                
+
+                <div className="row justify-content-center">
                 <Query query={CLIENTE_QUERY} variables={{id}} pollInterval={500}>
                     {({ loading, error, data, startPolling, stopPolling }) => {
                         if(loading) return 'Cargando'
@@ -18,11 +20,13 @@ class EditarCliente extends Component {
                         console.log(data)
 
                         return(
-                            <h4>{data.getCliente.nombre} {data.getCliente.apellido}</h4>
+                            <FormularioEditar
+                                cliente={data.getCliente}
+                            />
                         )
                     }}
-
                 </Query>
+                </div>                
             </Fragment>
         );
     }
