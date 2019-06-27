@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { CLIENTE_QUERY } from '../queries';
+import { Query } from 'react-apollo'; 
 
 class EditarCliente extends Component {
     state = {}
@@ -6,10 +8,13 @@ class EditarCliente extends Component {
 
         const { id } = this.props.match.params
 
-        console.log(id);
-        
+        // console.log(id);
+
         return (
-            <h1 className="text-center">Editar Cliente</h1>
+            <Fragment>
+                <h1 className="text-center">Editar Cliente</h1>
+                <h4>{id.nombre}</h4>
+            </Fragment>
         );
     }
 }
