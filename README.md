@@ -168,3 +168,15 @@ Match --> Params --> We get the ID
 
 console.log(id);
 ```
+```
+Create Query for queries folder
+export const CLIENTE_QUERY = gql`
+  query buscarCliente($id: ID){
+    getCliente(id: $id) {
+      nombre
+      apellido
+      empresa
+    }
+  }
+`;
+```
