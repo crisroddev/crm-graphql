@@ -29,8 +29,16 @@ class NewClient extends Component {
     }
 
     campoEmail = i => e => {
-        console.log(i);
-        console.log(e.target.value)
+        const nuevoEmail = this.state.emails.map((email, index) => {
+            if(i !== index) return index;
+            return {
+                ...email,
+                email: e.target.value
+            }
+        })
+        this.setState({
+            emails: nuevoEmail
+        })
     }
 
     render() {
