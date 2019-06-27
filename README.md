@@ -228,3 +228,5 @@ return(
  refetch={refetch}
 />
 ```
+
+## Delete Clients
