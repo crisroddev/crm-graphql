@@ -61,7 +61,9 @@ class NewClient extends Component {
                                 onSubmit={ e => {
                                     e.preventDefault();
 
-                                    const { tipo, edad, nombre, apellido, empresa, email } = this.state.cliente;
+                                    const { tipo, edad, nombre, apellido, empresa } = this.state.cliente;
+
+                                    const { emails } = this.state;
 
                                     if(nombre === '' || apellido === '' || empresa === '' || edad === '' || tipo === '') {
                                         this.setState({
@@ -80,7 +82,7 @@ class NewClient extends Component {
                                         apellido,
                                         empresa,
                                         edad: Number(edad),
-                                        email,
+                                        emails,
                                         tipo
                                     };
                                     crearCliente({
