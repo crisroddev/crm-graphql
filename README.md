@@ -179,4 +179,9 @@ export const CLIENTE_QUERY = gql`
     }
   }
 `;
+
+Query Variables
+{
+  "id": "5d138972ad4fe1ab008858ba"
+}
 ```
