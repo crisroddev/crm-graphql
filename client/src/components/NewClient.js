@@ -28,6 +28,10 @@ class NewClient extends Component {
         })
     }
 
+    campoEmail = () => {
+        console.log('Escribiendo email')
+    }
+
     render() {
         const { error } = this.state;
         let respuesta = (error) ? <p className="alert alert-danger p-3 text-center">Todos los campos son obligatorios</p> : '';
