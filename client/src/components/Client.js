@@ -13,7 +13,10 @@ const Contactos = () => (
             <Fragment>
                 <h2 className="text-center"> Listado Clientes</h2>
                 <ul className="list-group">
-                    { data.getClientes.map(clientes => (
+                    { data.getClientes.map(clientes => {
+                        const {id} = clientes;
+                        
+                        return(
                         <li key={clientes.id} className="list-group-item">
                             <div className="row justify-content-between align-items-center">
                                 <div className="col-md-8 d-flex justify-content-between align-items-center">
@@ -27,7 +30,7 @@ const Contactos = () => (
                                             type="button"
                                             onClick={ () => {
                                                 eliminarCliente({
-                                                    variables: clientes.id
+                                                    variables: {id}
                                                 })
                                             }}>
                                         &times; Eliminar
@@ -40,7 +43,8 @@ const Contactos = () => (
                                 </div>
                             </div>
                         </li>
-                    ))}
+                        )
+                    })}
                 </ul>
             </Fragment>
         )
