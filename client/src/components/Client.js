@@ -20,6 +20,7 @@ class Clientes extends Component {
             {({ loading, error, data, startPolling, stopPolling}) => {
                 if(loading) return "Cargando"
                 if(error) return `Error: ${error.message}`
+                {/* console.log(data) */}
                 return (
                     <Fragment>
                         <h2 className="text-center"> Listado Clientes</h2>
@@ -61,6 +62,7 @@ class Clientes extends Component {
                         </ul>
                         <Paginador
                             actual={this.state.paginador.actual}
+                            totalClientes={this.data.totalClientes}
                         />
                     </Fragment>
                 )
