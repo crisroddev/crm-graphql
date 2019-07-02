@@ -59,7 +59,9 @@ class Clientes extends Component {
                                 )
                             })}
                         </ul>
-                        <Paginador/>
+                        <Paginador
+                            actual={this.state.paginador.actual}
+                        />
                     </Fragment>
                 )
             }}
