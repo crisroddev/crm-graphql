@@ -14,6 +14,14 @@ export const resolvers = {
         getClientes: (root, { limite, offset }) => {
             return Clientes.find({}).limit(limite).skip(offset)
         },
+        totalClientes : (root) => {
+            return new Promise((resolve, object) => {
+                Clientes.countDocuments({}, (error, count) => {
+                    if(error) rejects (error)
+                    else resolve(count)
+                })
+            })
+        },
     },
 
     Mutation: {

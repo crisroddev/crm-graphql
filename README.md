@@ -267,4 +267,7 @@ state = {
     }
 
 Create Paginador component
+
+Create New Query total of clients
+
 ```
