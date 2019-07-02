@@ -11,8 +11,8 @@ export const resolvers = {
                 });
             });
         },
-        getClientes: (root, { limite }) => {
-            return Clientes.find({}).limit(limite)
+        getClientes: (root, { limite, offset }) => {
+            return Clientes.find({}).limit(limite).skip(offset)
         },
     },
 

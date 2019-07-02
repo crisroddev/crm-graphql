@@ -25,7 +25,7 @@ type Cliente {
     }
 
     type Query {
-        getClientes(limite: Int): [Cliente]
+        getClientes(limite: In, offset: Int): [Cliente]
         getCliente(id: ID): Cliente
     }
 

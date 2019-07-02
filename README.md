@@ -241,3 +241,17 @@ Variables
   "id": "5d138972ad4fe1ab008858ba"
 }
 ```
+
+## Pagination
+### Limits and Offsets
+```
+Resolver:
+getClientes: (root, { limite, offset }) => {
+  return Clientes.find({}).limit(limite).skip(offset)
+},
+
+Schema
+ type Query {
+    getClientes(limite: In, offset: Int): [Cliente]
+  }
+```
