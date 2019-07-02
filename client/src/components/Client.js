@@ -65,7 +65,7 @@ class Clientes extends Component {
                         <Paginador
                             actual={this.state.paginador.actual}
                             totalClientes={data.totalClientes}
-                            limitr={this.limite}
+                            limite={this.limite}
                         />
                     </Fragment>
                 )
