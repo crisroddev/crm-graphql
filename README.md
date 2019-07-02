@@ -255,3 +255,16 @@ Schema
     getClientes(limite: In, offset: Int): [Cliente]
   }
 ```
+
+```
+Client.js turns into state component
+
+state = {
+        paginador: {
+            offset: 0,
+            actual: 1
+        }
+    }
+
+Create Paginador component
+```
