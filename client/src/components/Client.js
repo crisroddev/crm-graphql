@@ -7,6 +7,8 @@ import Paginador from './Paginador';
 
 class Clientes extends Component {
 
+    limite = 5;
+
     state = {
         paginador: {
             offset: 0,
@@ -63,6 +65,7 @@ class Clientes extends Component {
                         <Paginador
                             actual={this.state.paginador.actual}
                             totalClientes={data.totalClientes}
+                            limitr={this.limite}
                         />
                     </Fragment>
                 )
