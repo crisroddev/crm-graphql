@@ -35,6 +35,9 @@ type Cliente {
         getClientes(limite: Int, offset: Int): [Cliente]
         getCliente(id: ID): Cliente
         totalClientes: String
+
+        # Productos
+        getProductos: [Producto]
     }
 
     input PedidoInput {
