@@ -28,7 +28,7 @@ export const resolvers = {
             return Productos.find({}).limit(limite).skip(offset)
         },
         obtenerProducto: (root, { id }) => {
-            return newPromise((resolve, object) => {
+            return new Promise((resolve, object) => {
                 Productos.findById(id, (error, producto) => {
                     if(error) rejects(error)
                     else resolve(producto)
