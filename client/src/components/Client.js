@@ -31,7 +31,7 @@ class Clientes extends Component {
 
     render(){
         return (
-            <Query query={CLIENTES_QUERY} pollInterval={500}>
+            <Query query={CLIENTES_QUERY} pollInterval={500} variables={{limite: this.limite, offset: this.state.paginador.offset}}>
             {({ loading, error, data, startPolling, stopPolling}) => {
                 if(loading) return "Cargando"
                 if(error) return `Error: ${error.message}`
