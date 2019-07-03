@@ -9,6 +9,7 @@ class Productos extends Component {
 
     actualizarState = e => {
         const {name, value} = e.target;
+        console.log(name, ':', value)
     }
 
     render() {
