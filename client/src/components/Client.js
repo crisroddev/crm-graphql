@@ -16,6 +16,14 @@ class Clientes extends Component {
         }
     }
 
+    paginaAnterior = () => {
+        console.log('anterior')
+    }
+
+    paginaSiguiente = () => {
+        console.log('siguiente')
+    }
+
     render(){
         return (
             <Query query={CLIENTES_QUERY} pollInterval={500}>
@@ -66,6 +74,8 @@ class Clientes extends Component {
                             actual={this.state.paginador.actual}
                             totalClientes={data.totalClientes}
                             limite={this.limite}
+                            paginaAnterior={this.paginaAnterior}
+                            paginaSiguiente={this.paginaSiguiente}
                         />
                     </Fragment>
                 )
