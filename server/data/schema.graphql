@@ -18,6 +18,13 @@ type Cliente {
         precio: Int
     }
 
+    type Producto {
+        id: ID
+        nombre: String!
+        precio: Int!
+        stock: Int!
+    }
+
     """Asigna Categoria del Cliente"""
     enum TipoCliente {
         BASICO
