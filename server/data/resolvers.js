@@ -1,4 +1,4 @@
-import {Clientes} from './db';
+import {Clientes, Productos} from './db';
 import mongoose from 'mongoose';
 
 export const resolvers = {
@@ -59,6 +59,23 @@ export const resolvers = {
                     else resolve("Se elimino correctamente")
                 })
             })
+        },
+
+        //Productos
+        nuevoProducto: (root, {input}) => {
+            const nuevoProducto = new Productos({
+                nombre: input.nombre,
+                precio: input.precio,
+                stock: input.stock
+            });
+
+            nuevoProducto.id = nuevoProducto._id
+            return new Promise((resolve, object) => {
+                nuevoProducto.save((error) => {
+                    if(error) rejects (error)
+                    else resolve(nuevoProducto)
+                })
+            });
         }
     }
 };
