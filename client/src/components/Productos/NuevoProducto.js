@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-class Productos extends Component {
+class NuevoProducto extends Component {
     state = { 
         nombre: '',
         precio: '',
@@ -9,7 +9,9 @@ class Productos extends Component {
 
     actualizarState = e => {
         const {name, value} = e.target;
-        console.log(name, ':', value)
+        this.setState({
+            [name]: value
+        })
     }
 
     render() {
@@ -64,4 +66,4 @@ class Productos extends Component {
     }
 }
 
-export default Productos;
+export default NuevoProducto;
