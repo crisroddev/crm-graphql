@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
-import { ACTUALIZAR_CLIENTE } from '../mutations';
+import { ACTUALIZAR_CLIENTE } from '../../mutations';
 import { withRouter } from 'react-router-dom';
 
 class FormularioEditar extends Component {
