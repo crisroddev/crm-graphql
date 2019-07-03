@@ -277,3 +277,10 @@ on DB create Product schema
 on resolver create new Product
 on schemas create new Products
 ```
+### Frontend New Products
+```
+EditarProducto.js
+FormularioEditarProducto.js
+Productos.js
+NuevoProductos.js
+```
