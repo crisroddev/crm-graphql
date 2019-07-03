@@ -25,7 +25,8 @@ class Productos extends Component {
                             type="text"
                             name="nombre" 
                             className="form-control" 
-                            placeholder="Nombre del Producto"/>
+                            placeholder="Nombre del Producto"
+                            onChange={this.actualizarState}/>
                     </div>
                     <div className="form-group">
                         <label>Precio:</label>
@@ -37,7 +38,8 @@ class Productos extends Component {
                                 type="number" 
                                 name="precio" 
                                 className="form-control" 
-                                placeholder="Precio del Producto"/>
+                                placeholder="Precio del Producto"
+                                onChange={this.actualizarState}/>
                         </div>
                     </div>
                     <div className="form-group">
@@ -46,7 +48,8 @@ class Productos extends Component {
                             type="number" 
                             name="stock" 
                             className="form-control" 
-                            placeholder="stock del Producto" />
+                            placeholder="stock del Producto"
+                            onChange={this.actualizarState} />
                     </div>
                     <button 
                         type="submit" 
