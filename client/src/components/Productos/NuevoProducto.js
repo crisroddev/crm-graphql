@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react';
 
 class Productos extends Component {
-        state = { 
-            nombre: '',
-            precio: '',
-            stock: ''
-         };
-         
+    state = { 
+        nombre: '',
+        precio: '',
+        stock: ''
+    };
+    
+
     render() {
         return (
             <Fragment>
