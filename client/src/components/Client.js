@@ -21,7 +21,12 @@ class Clientes extends Component {
     }
 
     paginaSiguiente = () => {
-        console.log('siguiente')
+        this.setState({
+            paginador: {
+                offset: this.state.paginador.offset + this.limite,
+                actual: this.state.paginador.actual + 1
+            }
+        })
     }
 
     render(){
