@@ -53,6 +53,8 @@ type Cliente {
 
     """ Mutations para crear nuevos clientes"""
     type Mutation {
+        #Clientes
+
         #Nombre del Resolver, input con datos y valor que retorna
         """ Te permite crear nuevos clientes """
         crearCliente(input: ClienteInput): Cliente
@@ -62,4 +64,9 @@ type Cliente {
 
         """Te Permite eliminar clientes"""
         eliminarCliente(id: ID!): String
+
+        #Productos
+
+        """ Te Permite Crear nuevos Productos"""
+        nuevoProducto(input: ProductoInput): Producto
     }

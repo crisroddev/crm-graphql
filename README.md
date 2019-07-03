@@ -271,3 +271,9 @@ Create Paginador component
 Create New Query total of clients
 
 ```
+## New Products
+```
+on DB create Product schema
+on resolver create new Product
+on schemas create new Products
+```
