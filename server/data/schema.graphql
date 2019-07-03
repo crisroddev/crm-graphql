@@ -88,5 +88,8 @@ type Cliente {
 
         """ Te Permite Crear nuevos Productos"""
         nuevoProducto(input: ProductoInput): Producto
+        """ Te Permite Actualizar los productos"""
         actualizarProducto(input: ProductoInput): Producto
+        """ Te Permite Eliminar los Productos"""
+        eliminarProducto(id: ID!): String
     }

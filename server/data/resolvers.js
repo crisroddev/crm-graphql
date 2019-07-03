@@ -97,6 +97,14 @@ export const resolvers = {
                     else resolve(producto)
                 })
             })
+        },
+        eliminarProducto: (root, { id }) => {
+            return new Promise((resolve, object) => {
+                Productos.findOneAndRemove({_id: id}, (error, ) => {
+                    if(error) rejects(error)
+                    else('Se elimino Correctamente el Producto')
+                })
+            })
         }
     }
 };
