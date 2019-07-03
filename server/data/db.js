@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://cris:Cra260385@ds243717.mlab.com:43717/crm', { useNewUrlParser: true });
+mongoose.set('setFindAndModify', false);
 
 //Clientes
 const clientesSchema = new mongoose.Schema({
