@@ -88,4 +88,5 @@ type Cliente {
 
         """ Te Permite Crear nuevos Productos"""
         nuevoProducto(input: ProductoInput): Producto
+        actualizarProducto(input: ProductoInput): Producto
     }
