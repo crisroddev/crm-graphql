@@ -24,8 +24,8 @@ export const resolvers = {
         },
 
         //Productos
-        getProductos: (root) => {
-            return Productos.find({})
+        getProductos: (root, { limite, offset  }) => {
+            return Productos.find({}).limit(limite).skip(offset)
         }
     },
 
