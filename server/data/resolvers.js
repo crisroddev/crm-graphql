@@ -102,7 +102,7 @@ export const resolvers = {
             return new Promise((resolve, object) => {
                 Productos.findOneAndRemove({_id: id}, (error, ) => {
                     if(error) rejects(error)
-                    else('Se elimino Correctamente el Producto')
+                    else resolve('Se elimino Correctamente el Producto')
                 })
             })
         }
