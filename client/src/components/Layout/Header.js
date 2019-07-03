@@ -19,7 +19,7 @@ const Header = () => (
                         </Link>
                     </li>
                     <li className="nav-item active">
-                        <Link to="producto/nuevo" className="btn btn-success">
+                        <Link to="productos/nuevo" className="btn btn-success">
                             Nuevo Producto
                         </Link>
                     </li>
