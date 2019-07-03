@@ -6,7 +6,10 @@ class Productos extends Component {
         precio: '',
         stock: ''
     };
-    
+
+    actualizarState = e => {
+        const {name, value} = e.target;
+    }
 
     render() {
         return (
