@@ -22,6 +22,11 @@ export const resolvers = {
                 })
             })
         },
+
+        //Productos
+        getProductos: (root) => {
+            return Productos.find({})
+        }
     },
 
     Mutation: {
