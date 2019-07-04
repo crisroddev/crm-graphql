@@ -33,12 +33,9 @@ mutation eliminarCliente($id: ID!) {
 `;
 
 export const NUEVO_PRODUCTO = gql`
-mutation nuevoProducto($input: ProductoInput) {
-  nuevoProducto(input: $input) {
-    id
-    nombre
-    precio
-    stock
+  mutation nuevoProducto($input: ProductoInput) {
+    nuevoProducto(input: $input) {
+      nombre
   }
 }
 `;

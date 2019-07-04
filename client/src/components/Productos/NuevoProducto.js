@@ -40,7 +40,7 @@ class NuevoProducto extends Component {
             stock: Number(stock)
         }
 
-        // console.log(input)¡
+        // console.log(input)
 
         return (
             <Fragment>
@@ -48,11 +48,11 @@ class NuevoProducto extends Component {
             <div className="row justify-content-center">
                 <Mutation 
                     mutation={NUEVO_PRODUCTO}
-                    variable={{input}}>
+                    variables={{input}}>
                     {( nuevoProducto, { loading, error, data }) => {
                         return (
                             <form
-                                onSubmit={ e => this.crearNuevoProducto( e, nuevoProducto )}
+                                onSubmit={ e => this.crearNuevoProducto(e, nuevoProducto )}
                                 className="col-md-8">
                                 <div className="form-group">
                                     <label>Nombre:</label>
