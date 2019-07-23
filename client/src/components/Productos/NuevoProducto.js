@@ -13,6 +13,12 @@ class NuevoProducto extends Component {
        ...initialState
     };
 
+    limpiarState = () => {
+        this.setState({
+            ...initialState
+        })
+    }
+
     actualizarState = e => {
         const {name, value} = e.target;
         this.setState({
