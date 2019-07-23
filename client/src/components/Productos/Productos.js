@@ -1,16 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import { Query, Mutation } from 'react-apollo';
+import {OBTENER_PRODUCTOS} from '../../queries';
 
 export default class Products extends Component {
     render() {
         return (
             <Fragment>
                 <h1 className="text-center mb-5">Productos</h1>
-                <Query query={CLIENTES_QUERY} pollInterval={500}>
+                <Query query={OBTENER_PRODUCTOS} pollInterval={500}>
                 {({ loading, error, data, startPolling, stopPolling}) => {
                 if(loading) return "Cargando"
                 if(error) return `Error: ${error.message}`
-                {/* console.log(data) */}
+                console.log(data)
                 return (
                         <table className="table">
                             <head>
