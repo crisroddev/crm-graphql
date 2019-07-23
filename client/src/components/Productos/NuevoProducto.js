@@ -2,11 +2,15 @@ import React, { Component, Fragment } from 'react';
 import { NUEVO_PRODUCTO } from '../../mutations';
 import { Mutation } from 'react-apollo';
 
+const initialState = {
+    nombre: '',
+    precio: '',
+    stock: ''
+}
+
 class NuevoProducto extends Component {
     state = { 
-        nombre: '',
-        precio: '',
-        stock: ''
+       ...initialState
     };
 
     actualizarState = e => {
