@@ -14,7 +14,7 @@ export default class Products extends Component {
                 console.log(data)
                 return (
                         <table className="table">
-                            <head>
+                            <thead>
                                 <tr className="table-primary">
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Precio</th>
@@ -22,7 +22,7 @@ export default class Products extends Component {
                                     <th scope="col">Eliminar</th>
                                     <th scope="col">Editar</th>
                                 </tr>
-                            </head>
+                            </thead>
                         </table>
                     )
                 }}
