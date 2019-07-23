@@ -37,7 +37,9 @@ class NuevoProducto extends Component {
     crearNuevoProducto = (e, nuevoProducto) => {
         e.preventDefault()
         nuevoProducto().then(data =>{
-            console.log(data)
+            this.limpiarState();
+            // Direccionar
+            this.props.history.push('/productos')
         })
     }
 
