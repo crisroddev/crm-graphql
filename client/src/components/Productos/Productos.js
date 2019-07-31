@@ -47,7 +47,12 @@ export default class Products extends Component {
                                     <td>{item.precio}</td>
                                     <td>{item.stock}</td>
                                     <td>
-                                        <Mutation mutation={ELIMINAR_PRODUCTO}>
+                                        <Mutation 
+                                            mutation={ELIMINAR_PRODUCTO}
+                                            onCompleted={(data) => {
+                                                console.log(data)
+                                            }}
+                                        >
                                             {eliminarProducto => (
                                                 <button 
                                                     onClick={ () => {
