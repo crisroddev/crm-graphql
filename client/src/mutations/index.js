@@ -39,3 +39,10 @@ export const NUEVO_PRODUCTO = gql`
   }
 }
 `;
+
+// Productos
+export const ELIMINAR_PRODUCTO =  gql`
+mutation eliminarProducto($id: ID!){
+  eliminarProducto(id: $id)
+}
+`;
