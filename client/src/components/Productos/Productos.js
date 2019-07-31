@@ -3,9 +3,22 @@ import { Query, Mutation } from 'react-apollo';
 import { OBTENER_PRODUCTOS } from '../../queries';
 import { ELIMINAR_PRODUCTO } from '../../mutations';
 import { Link } from 'react-router-dom';
+import Exito from '../Alertas/Exito';
 
 export default class Products extends Component {
+
+    state = {
+        alerta: {
+            mostrar: false,
+            mensaje: ''
+        }
+    }
+
     render() {
+
+        const { alerta: { mostrar, mensaje }} = this.state;
+        const alerta = (mostrar) ? <Exito mensaje={mensaje}/> : '';
+
         return (
             <Fragment>
                 <h1 className="text-center mb-5">Productos</h1>

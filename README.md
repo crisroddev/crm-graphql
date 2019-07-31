@@ -285,3 +285,5 @@ Productos.js
 NuevoProductos.js
 ```
 
+###Alerta
+(mensaje) evaluates if its true
