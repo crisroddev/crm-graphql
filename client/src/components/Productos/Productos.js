@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Query, Mutation } from 'react-apollo';
-import {OBTENER_PRODUCTOS} from '../../queries';
+import { OBTENER_PRODUCTOS } from '../../queries';
+import { ELIMINAR_PRODUCTO } from '../../mutations';
 import { Link } from 'react-router-dom';
 
 export default class Products extends Component {
@@ -33,11 +34,20 @@ export default class Products extends Component {
                                     <td>{item.precio}</td>
                                     <td>{item.stock}</td>
                                     <td>
-                                        <button 
-                                            type="button"
-                                            className="btn btn-danger">
-                                            &times; Eliminar
-                                        </button>
+                                        <Mutation mutation={ELIMINAR_PRODUCTO}>
+                                            {eliminarProducto => (
+                                                <button 
+                                                    onClick={ () => {
+                                                        eliminarProducto({
+                                                            variables: {id}
+                                                        })
+                                                    }}
+                                                    type="button"
+                                                    className="btn btn-danger">
+                                                    &times; Eliminar
+                                                </button>
+                                            )}
+                                        </Mutation>
                                     </td>
                                     <td>
                                         <Link 
