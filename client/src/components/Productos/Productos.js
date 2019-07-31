@@ -22,6 +22,8 @@ export default class Products extends Component {
         return (
             <Fragment>
                 <h1 className="text-center mb-5">Productos</h1>
+                {alerta}
+
                 <Query query={OBTENER_PRODUCTOS} pollInterval={500}>
                 {({ loading, error, data, startPolling, stopPolling}) => {
                 if(loading) return "Cargando"
@@ -50,15 +52,23 @@ export default class Products extends Component {
                                         <Mutation 
                                             mutation={ELIMINAR_PRODUCTO}
                                             onCompleted={(data) => {
-                                                console.log(data)
+                                                // console.log(data)
+                                                this.setState({
+                                                    alerta: {
+                                                        mostrar: true,
+                                                        mensaje: data.eliminarProducto
+                                                    }
+                                                })
                                             }}
                                         >
                                             {eliminarProducto => (
                                                 <button 
                                                     onClick={ () => {
-                                                        eliminarProducto({
-                                                            variables: {id}
-                                                        })
+                                                        if(window.confirm('Seguro que deseas eliminar el producto')) {
+                                                            eliminarProducto({
+                                                                variables: {id}
+                                                            })
+                                                        }
                                                     }}
                                                     type="button"
                                                     className="btn btn-danger">
