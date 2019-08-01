@@ -39,7 +39,6 @@ class FormularioEditarProducto extends Component {
     editarProductoForm = (e, actualizarProducto) => {
         e.preventDefault();
         actualizarProducto().then(data => {
-            data.props.history.push('/productos')
         })
     }
 
@@ -59,7 +58,10 @@ class FormularioEditarProducto extends Component {
                 <Mutation 
                     mutation={ACTUALIZAR_PRODUCTO}
                     variables={{input}}
-                    key={id}>
+                    key={id}
+                    onCompleted={() => this.props.refetch().then(() => {
+                        this.props.history.push('/productos')
+                    })}>
                     
                     {( actualizarProducto, {loading, error, data })=> {
                         return(
