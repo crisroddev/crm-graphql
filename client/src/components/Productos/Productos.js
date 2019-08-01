@@ -4,14 +4,39 @@ import { OBTENER_PRODUCTOS } from '../../queries';
 import { ELIMINAR_PRODUCTO } from '../../mutations';
 import { Link } from 'react-router-dom';
 import Exito from '../Alertas/Exito';
+import Paginador from '../Paginador';
 
 export default class Products extends Component {
 
     state = {
+        paginador: {
+            offset: 0,
+            actual: 1
+        },
         alerta: {
             mostrar: false,
             mensaje: ''
         }
+    }
+
+    limite = 10;
+
+    paginaAnterior = () => {
+        this.setState({
+            paginador: {
+                offset: this.state.paginador.offset - this.limite,
+                actual: this.state.paginador.actual - 1
+            }
+        })
+    }
+
+    paginaSiguiente = () => {
+        this.setState({
+            paginador: {
+                offset: this.state.paginador.offset + this.limite,
+                actual: this.state.paginador.actual + 1
+            }
+        })
     }
 
     render() {
@@ -24,12 +49,16 @@ export default class Products extends Component {
                 <h1 className="text-center mb-5">Productos</h1>
                 {alerta}
 
-                <Query query={OBTENER_PRODUCTOS} pollInterval={500}>
+                <Query 
+                    query={OBTENER_PRODUCTOS} 
+                    pollInterval={500}
+                    variables={{limite: this.limite, offset: this.state.paginador.offset}}>
                 {({ loading, error, data, startPolling, stopPolling}) => {
                 if(loading) return "Cargando"
                 if(error) return `Error: ${error.message}`
                 console.log(data)
                 return (
+                    <Fragment>
                         <table className="table">
                             <thead>
                                 <tr className="table-primary">
@@ -98,6 +127,14 @@ export default class Products extends Component {
                             })}
                         </tbody>
                     </table>
+                    <Paginador
+                            actual={this.state.paginador.actual}
+                            total={data.totalProductos}
+                            limite={this.limite}
+                            paginaAnterior={this.paginaAnterior}
+                            paginaSiguiente={this.paginaSiguiente}
+                        />
+                    </Fragment>
                     )
                 }}
                 </Query>
