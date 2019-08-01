@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import { ACTUALIZAR_PRODUCTO } from '../../mutations';
+import { withRouter } from 'react-router-dom';
 
 const initialState = {
     nombre: '',
@@ -38,7 +39,7 @@ class FormularioEditarProducto extends Component {
     editarProductoForm = (e, actualizarProducto) => {
         e.preventDefault();
         actualizarProducto().then(data => {
-            console.log(data)
+            data.props.history.push('/productos')
         })
     }
 
@@ -118,4 +119,4 @@ class FormularioEditarProducto extends Component {
     }
 }
 
-export default FormularioEditarProducto;
+export default withRouter(FormularioEditarProducto);
