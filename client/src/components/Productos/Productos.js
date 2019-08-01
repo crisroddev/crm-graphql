@@ -61,7 +61,7 @@ export default class Products extends Component {
                                                 }, () => {
                                                     setTimeout(() => {
                                                         this.setState({
-                                                            alert: {
+                                                            alerta: {
                                                                 mostrar: false,
                                                                 mensaje:''
                                                             }
