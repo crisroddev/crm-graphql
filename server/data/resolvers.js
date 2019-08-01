@@ -77,7 +77,7 @@ export const resolvers = {
             return new Promise((resolve, object) => {
                 Clientes.findOneAndRemove({ _id: id }, (error) => {
                     if(error) rejects(error)
-                    else resolve("Se elimino correctamente")
+                    else resolve("Se elimino correctamente el Cliente")
                 })
             })
         },
