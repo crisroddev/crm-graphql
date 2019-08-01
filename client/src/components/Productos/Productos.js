@@ -58,6 +58,10 @@ export default class Products extends Component {
                                                         mostrar: true,
                                                         mensaje: data.eliminarProducto
                                                     }
+                                                }, () => {
+                                                    setTimeout(() => {
+
+                                                    }, 3000)
                                                 })
                                             }}
                                         >
