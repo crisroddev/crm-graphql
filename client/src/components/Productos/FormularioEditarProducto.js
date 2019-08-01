@@ -39,6 +39,9 @@ class FormularioEditarProducto extends Component {
     editarProductoForm = (e, actualizarProducto) => {
         e.preventDefault();
         actualizarProducto().then(data => {
+            this.setState({
+                ...initialState
+            })
         })
     }
 
