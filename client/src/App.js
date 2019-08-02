@@ -31,11 +31,11 @@ function App() {
           <Header/>
           <div className="container">
             <Switch>
-              <Route exact path='/' component={Client}/>
-              <Route exact path='/cliente/nuevo' component={NewClient}/>
-              <Route exact path='/cliente/editar/:id' component={EditClient}/>
-              <Route exact path='/productos/nuevo' component={NewProduct}/>
+              <Route exact path='/clientes' component={Client}/>
+              <Route exact path='/clientes/nuevo' component={NewClient}/>
+              <Route exact path='/clientes/editar/:id' component={EditClient}/>
               <Route exact path='/productos' component={Products}/>
+              <Route exact path='/productos/nuevo' component={NewProduct}/>
               <Route exact path='/productos/editar/:id' component={EditProduct}/>
             </Switch>
           </div>
